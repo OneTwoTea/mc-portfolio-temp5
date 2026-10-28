@@ -1,0 +1,92 @@
+<!-- ĐÂY LÀ FILE KHUNG — Không sửa nội dung trực tiếp ở đây.
+     Nội dung lấy từ site.config.js, các khối {{{ @ten }}} do src/templates.js sinh ra.
+     {{ duong.dan }} = chèn giá trị (đã escape), {{{ @tenRenderer }}} = chèn HTML.
+     Build sẽ tự xóa comment này. -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  {{{ @seoHead }}}
+  <script>document.documentElement.classList.add("js")</script>
+  <!-- Google Fonts: Big Shoulders Display (tiêu đề) + Lexend (nội dung), có bộ chữ tiếng Việt.
+       Dùng dải weight (font biến thiên) → mỗi họ chỉ tải 1 file / bộ chữ. display=swap, không chặn render. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600..800&family=Lexend:wght@200..500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600..800&family=Lexend:wght@200..500&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">{{ ui.skipLink }}</a>
+
+  <!-- ═══ HEADER (trong suốt ở đầu trang, có nền mờ khi cuộn) ═══ -->
+  <header id="site-header" class="site-header">
+    <div class="wrap header-bar">
+      <a href="#hero" class="brand" aria-label="{{ brand.name }} — về đầu trang">
+        <span class="brand-mark"><img src="{{ brand.logo }}" alt="{{ brand.logoAlt }}" width="28" height="28"></span>
+        <span class="brand-name">{{ brand.name }}</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Menu chính">
+        {{{ @headerNav }}}
+      </nav>
+
+      <a {{{ @ctaAttrs }}} class="btn-glow btn-sm header-cta">{{ header.ctaButton.label }}</a>
+
+      <button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Mở menu">
+        <span class="menu-toggle-text">{{ ui.menuLabel }}</span>
+        <span class="menu-lines" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══ MENU ĐIỆN THOẠI (toàn màn hình) ═══ -->
+  <div id="mobile-menu" class="mobile-menu" hidden>
+    <nav class="mobile-menu-inner" aria-label="Menu điện thoại">
+      <ul class="mnav">
+        {{{ @mobileNav }}}
+      </ul>
+      <a {{{ @ctaAttrs }}} class="btn-glow w-full" data-menu-link>{{ header.ctaButton.label }}</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- ═══ 2. HERO — THE SPOTLIGHT REVEAL ═══ -->
+    {{{ @heroSection }}}
+
+    <!-- ═══ 3. GIỚI THIỆU ═══ -->
+    {{{ @aboutSection }}}
+
+    <!-- ═══ 4. DỊCH VỤ ═══ -->
+    {{{ @servicesSection }}}
+
+    <!-- ═══ 5. VIDEO SHOWREEL ═══ -->
+    {{{ @videosSection }}}
+
+    <!-- ═══ 6. GALLERY ═══ -->
+    {{{ @gallerySection }}}
+
+    <!-- ═══ 7. ĐỐI TÁC ═══ -->
+    {{{ @partnersSection }}}
+
+    <!-- ═══ 8. CẢM NHẬN ═══ -->
+    {{{ @testimonialsSection }}}
+
+    <!-- ═══ 9. CÂU HỎI THƯỜNG GẶP ═══ -->
+    {{{ @faqSection }}}
+
+    <!-- ═══ 10. LIÊN HỆ ═══ -->
+    {{{ @contactSection }}}
+  </main>
+
+  <!-- ═══ 11. FOOTER ═══ -->
+  {{{ @footerSection }}}
+
+  <!-- ═══ NÚT LIÊN HỆ NỔI (neon) ═══ -->
+  {{{ @floatingButton }}}
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
