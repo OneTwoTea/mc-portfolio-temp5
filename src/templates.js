@@ -710,6 +710,7 @@ export function createRenderers(config) {
         <p class="text-fg-muted">${esc(f.copyright || "")}</p>
       </div>
     </div>
+    <p class="wrap mt-6 text-center text-xs text-fg-muted">© 2026 ProfileStudio.me. Nền tảng xây dựng hồ sơ cá nhân chuyên nghiệp.</p>
   </footer>`;
     },
 
